@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anjali Jadhav Portfolio</title>
+    <style>
+        /* Background is Pink */
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background-color: #ffdae9; /* Soft Pink Background */
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .portfolio-card { 
+            width: 500px; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 { color: #d63384; margin-bottom: 5px; }
+
+        /* Navigation Buttons */
+        .nav-buttons { margin-bottom: 25px; }
+        
+        button {
+            background: #ff85b3;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        button:hover { background: #f06292; }
+
+        /* Quotes */
+        .quote { font-style: italic; color: #888; margin: 15px 0; font-size: 0.9em; }
+
+        /* Content Sections */
+        .page { display: none; text-align: left; animation: fadeIn 0.5s; }
+        .active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        ul { line-height: 1.8; }
+        .school-info { background: #fff0f5; padding: 15px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="portfolio-card">
+    <h1>Anjali Ashok Jadhav</h1>
+    <p class="quote">"Dream big, work hard, and make it happen."</p>
+
+    <div class="nav-buttons">
+        <button onclick="showPage('about')">About Me</button>
+        <button onclick="showPage('certs')">Certificates</button>
+    </div>
+
+    <div id="about" class="page active">
+        <h3 style="color: #d63384;">About Me</h3>
+        <div class="school-info">
+            <p><b>Current Status:</b> MIT First Year Student</p>
+            <p><b>Schooling:</b> BW New English Medium School, Latur</p>
+        </div>
+        <p><b>Skills:</b> Python Programming</p>
+        <p><b>Hobbies:</b> Dancing and Singing (Non-professional)</p>
+        <p class="quote">"Creativity is intelligence having fun."</p>
+    </div>
+
+    <div id="certs" class="page">
+        <h3 style="color: #d63384;">My Certificates</h3>
+        <ul>
+            <li><b>NASSCOM:</b> Digital 101 (30 Hours)</li>
+            <li><b>Infosys:</b> Completed</li>
+            <li><b>Anthropic AI Fluency:</b>
+                <ul>
+                    <li>Non-profits & Students</li>
+                    <li>Framework & Foundations</li>
+                    <li>Claude 101</li>
+                </ul>
+            </li>
+        </ul>
+        <p class="quote">"Success is a journey, not a destination."</p>
+    </div>
+</div>
+
+<script>
+    // Function to switch between "pages"
+    function showPage(pageId) {
+        // Hide all pages
+        document.getElementById('about').classList.remove('active');
+        document.getElementById('certs').classList.remove('active');
+        
+        // Show the clicked page
+        document.getElementById(pageId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
